@@ -5,7 +5,7 @@ var defaults = {
     port: 80,
     path: '/',
     method: 'HEAD',
-    interval: 15*60*1000 // 15 minutes
+    interval: 10*60*1000 // 10 minutes
 }
 
 // loop through all configured apps, and setup their interval
