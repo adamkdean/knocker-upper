@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/adamkdean/knocker-upper/issues"
   },
-  "homepage": "https://github.com/adamkdean/knocker-upper"
+  "homepage": "https://github.com/adamkdean/knocker-upper",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "2.3.x"
+  }
 }
