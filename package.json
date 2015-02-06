@@ -1,0 +1,19 @@
+{
+  "name": "knocker-upper",
+  "version": "1.0.0",
+  "description": "Stop Heroku apps from snoozing.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamkdean/knocker-upper.git"
+  },
+  "author": "Adam K Dean <adamkdean@googlemail.com> (http://www.adamkdean.co.uk/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamkdean/knocker-upper/issues"
+  },
+  "homepage": "https://github.com/adamkdean/knocker-upper"
+}
