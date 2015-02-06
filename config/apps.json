@@ -1,4 +1,16 @@
 [
-    "adamkdean-co-uk",
-    "amberfish-co-uk"
+    {
+        "host": "adamkdean-co-uk",
+        "interval": 1000
+    },
+    {
+        "host": "amberfish-co-uk",
+        "interval": 2000
+    },
+    {
+        "host": "test-application.herokuapp.com",
+        "port": 443,
+        "path": "/health-check",
+        "interval": 2500
+    }
 ]
