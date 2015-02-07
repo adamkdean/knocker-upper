@@ -8,7 +8,6 @@ var defaults = {
     interval: 10*60*1000 // 10 minutes
 }
 
-initialiseHttpServer();
 initialiseIntervals();
 
 function initialiseIntervals() {
@@ -23,15 +22,6 @@ function initialiseIntervals() {
           apps[i].method || defaults.method,
           apps[i].interval || defaults.interval));
     }
-}
-
-function initialiseHttpServer() {
-    // we have to bind to the port Heroku gives us
-    // or it thinks we've crashed and kills us
-    http.createServer(function (request, response) {
-      response.writeHead(200, {"Content-Type": "text/plain"});
-      response.end("200 OK\n");
-  }).listen(process.env.PORT);
 }
 
 function generateHerokuUrl(host) {
