@@ -8,17 +8,30 @@ var defaults = {
     interval: 10*60*1000 // 10 minutes
 }
 
-// loop through all configured apps, and setup their interval
-for(var i = 0; i < apps.length; i++) {
-    (function(host, port, path, method, interval) {
-        setInterval(function() {
-            knockUp(host, port, path, method);
-        }, interval);
-    }(generateHerokuUrl(apps[i].host),
-      apps[i].port || defaults.port,
-      apps[i].path || defaults.path,
-      apps[i].method || defaults.method,
-      apps[i].interval || defaults.interval));
+initialiseHttpServer();
+initialiseIntervals();
+
+function initialiseIntervals() {
+    for(var i = 0; i < apps.length; i++) {
+        (function(host, port, path, method, interval) {
+            setInterval(function() {
+                knockUp(host, port, path, method);
+            }, interval);
+        }(generateHerokuUrl(apps[i].host),
+          apps[i].port || defaults.port,
+          apps[i].path || defaults.path,
+          apps[i].method || defaults.method,
+          apps[i].interval || defaults.interval));
+    }
+}
+
+function initialiseHttpServer() {
+    // we have to bind to the port Heroku gives us
+    // or it thinks we've crashed and kills us
+    http.createServer(function (request, response) {
+      response.writeHead(200, {"Content-Type": "text/plain"});
+      response.end("200 OK\n");
+  }).listen(process.env.PORT);
 }
 
 function generateHerokuUrl(host) {
