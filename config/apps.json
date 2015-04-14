@@ -6,5 +6,9 @@
     {
         "host": "amberfish-co-uk",
         "interval": 600000
+    },
+    {
+        "host": "jazzberry-io",
+        "interval": 600000
     }
 ]
